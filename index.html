@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CODE QUIZ!</title>
-    <link rel="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/style.css" />
     <script src="assets/script.js"></script>
 </head>
+
 <body>
     <!--info box-->
     <div class="info-box">
         <h1>Welcome to Code Quiz!</h1>
+
+        <p>Answer as many questions as you can correctly before the timer runs out.</p>
         <h2>Click the start button to begin</h2>
     </div>
     <!--Start Quiz button-->
-    <div class="start-button"><button>Start Quiz</button></div>
+    <div class="start-button"><button onclick="startQuiz()">Start Quiz</button></div>
 
-    
+    <!--Quiz Box-->
+    <div class="quiz-box">
+        <div class="timer">
+            <header>
+                <div class="title">Code Quiz</div>
+                <div class="time-left-txt">Time Remaining</div>
+                <div class="timer-sec">75</div>
+            </header>
+        </div>
+    </div>
+
+    <section>
+        <div class="que-text"></div>
+        <div class="options"></div>
+    </section>
+
+<!--Result Box-->
+<div class="results"></div>
+
+
 </body>
+
 </html>

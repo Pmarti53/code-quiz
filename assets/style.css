@@ -1,12 +1,57 @@
-*{
-    margin: 0;
-    padding: 0;
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-body {
-    display: block;
+header {
+    justify-content: center;
     text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }    
 
+.info-box {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 12px;
+    box-shadow: 0 0 12px 2px;
+}
 
+.btn-grid {
+    display:grid;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.btn {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: thistle;
+    opacity: 75%;
+}
+
+.start-btn, .next-btn {
+    font-size: larger;
+    padding: 10px 20px;
+
+}
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}

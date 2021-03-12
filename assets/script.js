@@ -18,8 +18,13 @@
 
 
 var startButton = document.getElementById('start-btn');
-var quizIntro = document.getElementById('quiz-intro');
+var quizIntro = document.getElementById('intro');
 var questionContainer = document.getElementById('question-container');
+var questionElement = document.getElementById('question');
+var answerButtons = document.getElementById('answer-buttons')
+
+var shuffledQuestions, currentQuestionIndex
+
 
 startButton.addEventListener("click", startQuiz)
 
@@ -29,126 +34,52 @@ startButton.addEventListener("click", startQuiz)
 function startQuiz() {
     startButton.classList.add('hide')
     questionContainer.classList.remove('hide')
+    quizIntro.classList.add('hide')
+    shuffledQuestions = questions.sort(() => Math.random() -.5)
+    currentQuestionIndex = 0
     timer(90);
-
+    nextQue
 };
 
-function timer(seconds) {
-    var remaningTime = seconds;
-    window.setTimeout(function () {
-        console.log(remaningTime);
-        if (remaningTime > 0) {
-            timer(remaningTime - 1,);
-        }
-    }, 1000);
-}
+
 
 
 
 
 function nextQue() {
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
 
+function showQuestion(question) {
+    questionElement.innerText = question.question
 }
 
 function selectAnswer() {
 
 }
-// //Questions
-// let questions = [
-//     {
-//         number: 1,
-//         question: "Question 1",
-//         answer: "answer 3",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
+//Questions
+var questions = [
+    { 
+        question: 'Question 1',
+        answers: [
+            {text: '4', correct: true },
+            {text: '22', correct: false },
+            {text: '14', correct: false },
+            {text: '7', correct: false },
 
-//     {
-//         number: 2,
-//         question: "Question 2",
-//         answer: "answer 1",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
+        ]
 
-//     {
-//         number: 3,
-//         question: "Question 3",
-//         answer: "answer 3",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
+    }
 
-//     {
-//         number: 4,
-//         question: "Question 4",
-//         answer: "answer 2",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
 
-//     {
-//         number: 5,
-//         question: "Question 5",
-//         answer: "answer 4",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
-
-//     {
-//         number: 6,
-//         question: "Question 6",
-//         answer: "answer 1",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
-
-//     {
-//         number: 7,
-//         question: "Question 7",
-//         answer: "answer 2",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
-
-//     {
-//         number: 8,
-//         question: "Question 1",
-//         answer: "answer 4",
-//         options: [
-//             "answer 1",
-//             "answer 2",
-//             "answer 3",
-//             "answer 4"
-//         ]
-//     },
-
-// ]
+]
+//timer function
+function timer(seconds) {
+    var remaningTime = seconds;
+    window.setTimeout(function () {
+        // console.log(remaningTime);
+        if (remaningTime > 0) {
+            timer(remaningTime - 1,);
+        }
+    }, 1000);
+}

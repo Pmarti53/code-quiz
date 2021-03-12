@@ -1,12 +1,50 @@
-var startButton = document.getElementById('start-btn')
+/**
+ * click start button
+ *  !-header element in info box is hidden as well as start button
+ *  -!unhide question container element
+ *  !-start timer
+ * 
+ *  -make timer appear on page using html
+ * quiz pops up
+ * ! -make questions and answers appear
+ *  
+ * answer questions
+ * -when answer is clicked, quiz goes to the next question and point is recorded\
+ * -when answer is wrong, timer decreases
+ * when quiz finishes, get score
+ *  -save score to local storage
+ *  -save initials
+ */
 
-startButton.addEventListener('click', startQuiz)
+
+var startButton = document.getElementById('start-btn');
+var quizIntro = document.getElementById('quiz-intro');
+var questionContainer = document.getElementById('question-container');
+
+startButton.addEventListener("click", startQuiz)
+
+
 
 
 function startQuiz() {
-    console.log('Start')
+    startButton.classList.add('hide')
+    questionContainer.classList.remove('hide')
+    timer(90);
 
+};
+
+function timer(seconds) {
+    var remaningTime = seconds;
+    window.setTimeout(function () {
+        console.log(remaningTime);
+        if (remaningTime > 0) {
+            timer(remaningTime - 1,);
+        }
+    }, 1000);
 }
+
+
+
 
 function nextQue() {
 

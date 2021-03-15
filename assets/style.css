@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -16,7 +18,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-}    
+}
 
 .info-box {
     width: 800px;
@@ -27,7 +29,7 @@ body {
 }
 
 .btn-grid {
-    display:grid;
+    display: grid;
     gap: 10px;
     margin: 15px 0;
 }
@@ -43,14 +45,22 @@ body {
     opacity: 75%;
 }
 
-.start-btn, .next-btn {
+.start-btn,
+.next-btn {
     font-size: larger;
     padding: 10px 20px;
-
 }
+
 .controls {
     display: flex;
     justify-content: center;
+}
+
+.timer .time_left_txt {
+    text-align: right;
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
 }
 
 .hide {
